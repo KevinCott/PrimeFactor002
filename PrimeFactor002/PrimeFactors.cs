@@ -9,7 +9,7 @@ namespace PrimeFactor002
             var factors = new List<int>();
             var candidate = 2;
 
-            while (candidate <= n)
+            while (n > 1)
             {
                 while ((n % candidate) == 0)
                 {
