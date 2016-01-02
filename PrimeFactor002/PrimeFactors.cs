@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace PrimeFactor002
 {
@@ -7,7 +6,20 @@ namespace PrimeFactor002
     {
         public static IEnumerable<int> Generate(int n)
         {
-            return Enumerable.Empty<int>();
+            var factors = new List<int>();
+            var candidate = 2;
+
+            while (candidate <= n)
+            {
+                while ((n % candidate) == 0)
+                {
+                    factors.Add(candidate);
+                    n /= candidate;
+                }
+                candidate++;
+            }
+
+            return factors;
         }
     }
 }
